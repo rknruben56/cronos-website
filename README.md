@@ -42,6 +42,8 @@ This will create a `dist` directory with all optimized files.
 cronos-website/
 ├── css/              # CSS styles
 │   └── styles.css    # Main stylesheet
+├── js/               # JavaScript files
+│   └── main.js       # Main script file
 ├── images/           # Image assets
 ├── dist/             # Built files (generated)
 ├── index.html        # Main HTML file

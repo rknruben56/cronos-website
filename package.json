@@ -6,8 +6,9 @@
     "clean": "rimraf dist",
     "minify:css": "postcss css/styles.css -o dist/css/styles.css",
     "minify:html": "html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true index.html -o dist/index.html",
+    "minify:js": "terser js/main.js -o dist/js/main.js",
     "copy:images": "copyfiles -u 1 \"images/**/*\" dist",
-    "build": "npm run clean && npm run minify:css && npm run minify:html && npm run copy:images",
+    "build": "npm run clean && npm run minify:css && npm run minify:html && npm run minify:js && npm run copy:images",
     "serve": "serve dist"
   },
   "devDependencies": {
@@ -17,6 +18,7 @@
     "postcss": "^8.4.31",
     "postcss-cli": "^10.1.0",
     "rimraf": "^5.0.1",
-    "serve": "^14.2.1"
+    "serve": "^14.2.1",
+    "terser": "^5.26.0"
   }
 }
