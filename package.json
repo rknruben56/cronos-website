@@ -1,0 +1,22 @@
+{
+  "name": "cronos-website",
+  "version": "1.0.0",
+  "description": "A static website for AA Cronos General Contractor",
+  "scripts": {
+    "clean": "rimraf dist",
+    "minify:css": "postcss css/styles.css -o dist/css/styles.css",
+    "minify:html": "html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true index.html -o dist/index.html",
+    "copy:images": "copyfiles -u 1 \"images/**/*\" dist",
+    "build": "npm run clean && npm run minify:css && npm run minify:html && npm run copy:images",
+    "serve": "serve dist"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "cssnano": "^6.0.1",
+    "html-minifier": "^4.0.0",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0",
+    "rimraf": "^5.0.1",
+    "serve": "^14.2.1"
+  }
+}
