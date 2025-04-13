@@ -7,7 +7,7 @@
     "minify:css": "postcss css/styles.css -o dist/css/styles.css",
     "minify:html": "html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true index.html -o dist/index.html",
     "minify:js": "terser js/main.js -o dist/js/main.js",
-    "copy:images": "copyfiles -u 1 \"images/**/*\" dist",
+    "copy:images": "copyfiles -u 1 \"images/**/*\" dist/images",
     "build": "npm run clean && npm run minify:css && npm run minify:html && npm run minify:js && npm run copy:images",
     "serve": "serve dist"
   },
