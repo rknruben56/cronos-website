@@ -18,6 +18,14 @@ A modern, responsive website for AA Cronos General Contractor
 npm install
 ```
 
+3. (Optional) Configure environment variables:
+
+```bash
+cp .env.example .env
+```
+
+Edit `.env` to set your CloudFront domain if different from the default.
+
 ### Development
 
 To run the development server:
@@ -56,6 +64,35 @@ cronos-website/
 ├── netlify.toml      # Netlify configuration
 └── README.md         # Project documentation
 ```
+
+## Environment Variables
+
+The site uses environment variables for configuration. These are injected during the build process.
+
+### Available Variables
+
+- `CLOUDFRONT_DOMAIN`: The CloudFront domain where your images are hosted (default: `d2n23u1adoega9.cloudfront.net`)
+
+### Local Development
+
+For local development, create a `.env` file:
+
+```bash
+cp .env.example .env
+```
+
+Then edit `.env` with your values.
+
+### Netlify Configuration
+
+In Netlify, set environment variables in your site settings:
+
+1. Go to Site settings → Build & deploy → Environment variables
+2. Add the environment variable:
+   - **Key**: `CLOUDFRONT_DOMAIN`
+   - **Value**: Your CloudFront domain (e.g., `d2n23u1adoega9.cloudfront.net`)
+
+The build process will automatically replace placeholders in the HTML with your environment variable values.
 
 ## Infrastructure
 
