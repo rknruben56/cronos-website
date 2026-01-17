@@ -3,6 +3,7 @@ node_modules/
 
 # Build output
 dist/
+index.processed.html
 
 # Environment variables
 .env
@@ -30,3 +31,16 @@ yarn-error.log*
 
 # Local Netlify folder
 .netlify
+
+# Infrastructure - Terraform/OpenTofu
+*.tfvars
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
